@@ -1,0 +1,17 @@
+# Exported from Render on 2026-03-05T03:51:08Z
+version: "1"
+services:
+- type: web
+  name: my-telegram-bot
+  runtime: python
+  repo: https://github.com/mdshifat350/my-telegram-bot
+  plan: free
+  envVars:
+  - key: GITHUB_TUKEN
+    sync: false
+  - key: BOT_TOKEN
+    sync: false
+  region: singapore
+  buildCommand: pip install -r requirements.txt
+  startCommand: python bot.py
+  autoDeployTrigger: commit
